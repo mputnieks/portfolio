@@ -32,12 +32,9 @@ html {
 .card {
     margin-right: 15px;
     margin-left: 15px;
-    margin-top: 15px;
+    margin-top: 8px;
+    margin-bottom: 8px;
     width: 300px;
-}
-
-.last-card {
-    margin-bottom: 15px;
 }
 
 .lg-item {

@@ -158,7 +158,6 @@ function createPortfolio2() {
 function createPortfolio3() {
     let r = document.createElement("DIV");
     r.classList.add("card");
-    r.classList.add("last-card");
     r.classList.add("slide_in");
     
     let r1 = document.createElement("IMG");
