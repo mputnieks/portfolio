@@ -8,6 +8,13 @@ html {
     display: none;
 }
 
+#body {
+    background-image:url(../img/bg-1.png);
+    background-repeat: repeat-y;
+    background-position:center center;
+    background-size:cover;
+}
+
 .bg1 {
     background-image:url(../img/landing_5.png);
     background-repeat:no-repeat;
@@ -15,10 +22,24 @@ html {
     background-size:cover;
     height: 100vh;
     color: black;
+}
+
+.top {
+    float: left;
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.5);
+    height: 20vh;
+    width: 100vw;
+}
+
+.bottom {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-flow: row wrap;
+    
+    height: 80vh;
+    width: 100vw;
 }
 
 .center {
