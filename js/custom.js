@@ -202,7 +202,6 @@ $(document).ready(function(){
   $('[data-toggle="tooltip"]').tooltip();
 });
 
-
 /* 
 <div class="accordion md-accordion" id="accordionEx" role="tablist" aria-multiselectable="true">
 

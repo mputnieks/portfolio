@@ -25,11 +25,27 @@ html {
 }
 
 .top {
-    float: left;
     padding: 10px;
-    background-color: rgba(0, 0, 0, 0.5);
     height: 20vh;
     width: 100vw;
+}
+
+.portrait {
+    border-radius: 100% 0px 0px 100% ;
+    height: 100px;
+    width: 100px;
+}
+
+.top-left {
+    padding: 0px;
+    margin: 0px;
+    height: 108px;
+    width: 400px;
+    border-radius: 100vh;
+    background-color: white;
+    border: 4px solid darkviolet;
+    align-items: center;
+    display: flex;
 }
 
 .bottom {
@@ -37,7 +53,6 @@ html {
     justify-content: center;
     align-items: center;
     flex-flow: row wrap;
-    
     height: 80vh;
     width: 100vw;
 }
