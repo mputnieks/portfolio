@@ -74,7 +74,7 @@ function clearStart(){
     
     window.setTimeout(createPortfolio2, 50);
     window.setTimeout(createPortfolio3, 50);
-    window.setTimeout(createPortfolio4, 50);
+    //window.setTimeout(createPortfolio4, 50);
 }
 
 function createPortfolio2() {
