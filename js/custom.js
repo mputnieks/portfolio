@@ -58,7 +58,7 @@ $(document).ready(function(){               // script animaciju trigger scroll s
       }
     });
   });
-})
+});
 
 // sākas mans kods (iepriekš tikai animācijas un sroll top button)
 
@@ -72,44 +72,9 @@ function clearStart(){
         document.getElementById("centre_start").removeChild(document.getElementById("centre_start").firstChild);
     }
     
-    //window.setTimeout(createPortfolio1, 50);
     window.setTimeout(createPortfolio2, 50);
     window.setTimeout(createPortfolio3, 50);
-}
-
-function createPortfolio1() {
-    let r = document.createElement("DIV");
-    r.classList.add("card");
-    r.classList.add("slide_in");
-    
-    let r1 = document.createElement("IMG");
-    r1.setAttribute("src", "img/card.png");
-    r1.classList.add("card-img-top");
-    r.appendChild(r1);
-
-    let r2 = document.createElement("DIV");
-    r2.classList.add("card-body");
-    
-    let r3 = document.createElement("H4");
-    r3.innerHTML = "mputnieks.pythonanywhere.com";
-    r2.appendChild(r3);
-    
-    let r4 = document.createElement("P");
-    r4.innerHTML = "Kāds apraksts par projektu";
-    r2.appendChild(r4);
-    
-    let r5 = document.createElement("BUTTON");
-    r5.setAttribute("type", "button");
-    r5.setAttribute("data-toggle", "modal");
-    r5.setAttribute("data-target", "#centralModalWarning");
-    r5.innerHTML = "Aplūkot projektu";
-    r5.classList.add("btn");
-    r5.classList.add("btn-success");
-    r2.appendChild(r5);
-    
-    r.appendChild(r2);
-    
-    document.getElementById("centre_start").appendChild(r);
+    window.setTimeout(createPortfolio4, 50);
 }
 
 function createPortfolio2() {
@@ -178,6 +143,49 @@ function createPortfolio3() {
     r4.classList.add("badge-pill");
     r4.classList.add("badge-warning");
     r4.innerHTML = "progresā";
+    r2.appendChild(r4);
+    
+    let r5 = document.createElement("P");
+    r5.innerHTML = "Maijs 2020";
+    r2.appendChild(r5);
+    
+    let r6 = document.createElement("BUTTON");
+    r6.setAttribute("type", "button");
+    r6.setAttribute("data-toggle", "modal");
+    r6.setAttribute("data-target", "#modal3");
+    r6.innerHTML = "Aplūkot projektu";
+    r6.classList.add("btn");
+    r6.classList.add("btn-success");
+    r2.appendChild(r6);
+    
+    r.appendChild(r2);
+    
+    document.getElementById("centre_start").appendChild(r);
+}
+
+function createPortfolio4() {
+    let r = document.createElement("DIV");
+    r.classList.add("card");
+    r.classList.add("slide_in");
+    
+    let r1 = document.createElement("IMG");
+    r1.setAttribute("src", "img/href-2.png");
+    r1.classList.add("card-img-top");
+    r.appendChild(r1);
+
+    let r2 = document.createElement("DIV");
+    r2.classList.add("card-body");
+    
+    let r3 = document.createElement("H4");
+    r3.classList.add("badge-inline");
+    r3.innerHTML = "pythonanywhere.com";
+    r2.appendChild(r3);
+    
+    let r4 = document.createElement("SPAN");
+    r4.classList.add("badge");
+    r4.classList.add("badge-pill");
+    r4.classList.add("badge-success");
+    r4.innerHTML = "pabeigts";
     r2.appendChild(r4);
     
     let r5 = document.createElement("P");

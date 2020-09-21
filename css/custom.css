@@ -85,6 +85,7 @@ html {
 }
 
 .center {
+  width: 260px;
   text-align: center;
   border: 4px solid darkviolet;
   border-radius: 10px;
