@@ -1,5 +1,7 @@
 // © Copyright Miķelis Putnieks 2020
 
+var language; // holds the current language value
+
 // When the user clicks on the button, scroll to the top of the document
 function topFunction() {
   document.body.scrollTop = 0; // For Safari
@@ -62,9 +64,10 @@ $(document).ready(function(){               // script animaciju trigger scroll s
 
 // sākas mans kods (iepriekš tikai animācijas un sroll top button)
 
-function show() {
+function show(lang) {
     document.getElementById("toportfolio").classList.add("slide_away");
     window.setTimeout(clearStart, 2400);
+    language = lang;
 }
 
 function clearStart(){
@@ -72,12 +75,13 @@ function clearStart(){
         document.getElementById("centre_start").removeChild(document.getElementById("centre_start").firstChild);
     }
     
+    window.setTimeout(createPortfolio1, 50);
     window.setTimeout(createPortfolio2, 50);
     window.setTimeout(createPortfolio3, 50);
-    //window.setTimeout(createPortfolio4, 50);
+    window.setTimeout(createPortfolio4, 50);
 }
 
-function createPortfolio2() {
+function createPortfolio1() {
     let r = document.createElement("DIV");
     r.classList.add("card");
     r.classList.add("slide_in");
@@ -99,18 +103,33 @@ function createPortfolio2() {
     r4.classList.add("badge");
     r4.classList.add("badge-pill");
     r4.classList.add("badge-success");
-    r4.innerHTML = "pabeigts";
+    if(language === 'lv'){
+        r4.innerHTML = "pabeigts";
+    }
+    if(language === 'eng'){
+        r4.innerHTML = "finished";
+    }
     r2.appendChild(r4);
     
     let r5 = document.createElement("P");
-    r5.innerHTML = "Februāris 2020";
+    if(language === 'lv'){
+        r5.innerHTML = "Februāris 2020";
+    }
+    if(language === 'eng'){
+        r5.innerHTML = "February 2020";
+    }
     r2.appendChild(r5);
     
     let r6 = document.createElement("BUTTON");
     r6.setAttribute("type", "button");
     r6.setAttribute("data-toggle", "modal");
-    r6.setAttribute("data-target", "#modal2");
-    r6.innerHTML = "Aplūkot projektu";
+    r6.setAttribute("data-target", "#modal1");
+    if(language === 'lv'){
+        r6.innerHTML = "Aplūkot projektu";
+    }
+    if(language === 'eng'){
+        r6.innerHTML = "Take a look";
+    }
     r6.classList.add("btn");
     r6.classList.add("btn-success");
     r2.appendChild(r6);
@@ -120,7 +139,7 @@ function createPortfolio2() {
     document.getElementById("centre_start").appendChild(r);
 }
 
-function createPortfolio3() {
+function createPortfolio2() {
     let r = document.createElement("DIV");
     r.classList.add("card");
     r.classList.add("slide_in");
@@ -142,18 +161,92 @@ function createPortfolio3() {
     r4.classList.add("badge");
     r4.classList.add("badge-pill");
     r4.classList.add("badge-warning");
-    r4.innerHTML = "progresā";
+    if(language === 'lv'){
+        r4.innerHTML = "progresā";
+    }
+    if(language === 'eng'){
+        r4.innerHTML = "ongoing";
+    }
     r2.appendChild(r4);
     
     let r5 = document.createElement("P");
-    r5.innerHTML = "Maijs 2020";
+    if(language === 'lv'){
+        r5.innerHTML = "Maijs 2020";
+    }
+    if(language === 'eng'){
+        r5.innerHTML = "May 2020";
+    }
+    r2.appendChild(r5);
+    
+    let r6 = document.createElement("BUTTON");
+    r6.setAttribute("type", "button");
+    r6.setAttribute("data-toggle", "modal");
+    r6.setAttribute("data-target", "#modal2");
+    if(language === 'lv'){
+        r6.innerHTML = "Aplūkot projektu";
+    }
+    if(language === 'eng'){
+        r6.innerHTML = "Take a look";
+    }
+    r6.classList.add("btn");
+    r6.classList.add("btn-success");
+    r2.appendChild(r6);
+    
+    r.appendChild(r2);
+    
+    document.getElementById("centre_start").appendChild(r);
+}
+
+function createPortfolio3() {
+    let r = document.createElement("DIV");
+    r.classList.add("card");
+    r.classList.add("slide_in");
+    
+    let r1 = document.createElement("IMG");
+    r1.setAttribute("src", "img/href-4.png");
+    r1.classList.add("card-img-top");
+    r.appendChild(r1);
+
+    let r2 = document.createElement("DIV");
+    r2.classList.add("card-body");
+    
+    let r3 = document.createElement("H4");
+    r3.classList.add("badge-inline");
+    r3.innerHTML = "WebGame";
+    //r3.style.fontSize = "12px";
+    r2.appendChild(r3);
+    
+    let r4 = document.createElement("SPAN");
+    r4.classList.add("badge");
+    r4.classList.add("badge-pill");
+    r4.classList.add("badge-success");
+    if(language === 'lv'){
+        r4.innerHTML = "pabeigts";
+    }
+    if(language === 'eng'){
+        r4.innerHTML = "finished";
+    }
+    r2.appendChild(r4);
+    
+    let r5 = document.createElement("P");
+    if(language === 'lv'){
+        r5.innerHTML = "Maijs 2020";
+    }
+    if(language === 'eng'){
+        r5.innerHTML = "May 2020";
+    }
     r2.appendChild(r5);
     
     let r6 = document.createElement("BUTTON");
     r6.setAttribute("type", "button");
     r6.setAttribute("data-toggle", "modal");
     r6.setAttribute("data-target", "#modal3");
-    r6.innerHTML = "Aplūkot projektu";
+    if(language === 'lv'){
+        r6.innerHTML = "Aplūkot projektu";
+    }
+    if(language === 'eng'){
+        r6.innerHTML = "Take a look";
+    }
     r6.classList.add("btn");
     r6.classList.add("btn-success");
     r2.appendChild(r6);
@@ -169,7 +262,7 @@ function createPortfolio4() {
     r.classList.add("slide_in");
     
     let r1 = document.createElement("IMG");
-    r1.setAttribute("src", "img/href-2.png");
+    r1.setAttribute("src", "img/href-3.png");
     r1.classList.add("card-img-top");
     r.appendChild(r1);
 
@@ -178,25 +271,40 @@ function createPortfolio4() {
     
     let r3 = document.createElement("H4");
     r3.classList.add("badge-inline");
-    r3.innerHTML = "pythonanywhere.com";
+    r3.innerHTML = "TurtlesIdea.com";
     r2.appendChild(r3);
     
     let r4 = document.createElement("SPAN");
     r4.classList.add("badge");
     r4.classList.add("badge-pill");
     r4.classList.add("badge-success");
-    r4.innerHTML = "pabeigts";
+    if(language === 'lv'){
+        r4.innerHTML = "pabeigts";
+    }
+    if(language === 'eng'){
+        r4.innerHTML = "finished";
+    }
     r2.appendChild(r4);
     
     let r5 = document.createElement("P");
-    r5.innerHTML = "Maijs 2020";
+    if(language === 'lv'){
+        r5.innerHTML = "Janvāris 2020";
+    }
+    if(language === 'eng'){
+        r5.innerHTML = "January 2020";
+    }
     r2.appendChild(r5);
     
     let r6 = document.createElement("BUTTON");
     r6.setAttribute("type", "button");
     r6.setAttribute("data-toggle", "modal");
-    r6.setAttribute("data-target", "#modal3");
-    r6.innerHTML = "Aplūkot projektu";
+    r6.setAttribute("data-target", "#modal4");
+    if(language === 'lv'){
+        r6.innerHTML = "Aplūkot projektu";
+    }
+    if(language === 'eng'){
+        r6.innerHTML = "Take a look";
+    }
     r6.classList.add("btn");
     r6.classList.add("btn-success");
     r2.appendChild(r6);
